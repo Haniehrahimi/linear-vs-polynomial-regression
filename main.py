@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error,mean_squared_error,r2_score
 from sklearn.preprocessing import PolynomialFeatures
-
+import matplotlib.pyplot as plt
 #Load Dataset
 housing = fetch_california_housing(as_frame=True)
 df = housing.frame
@@ -68,3 +68,15 @@ print("MAE:", mae_poly)
 print("MSE:", mse_poly)
 print("R2:", r2_poly)
 
+#Comparison Chart
+models = ["Linear Regression","Polynomial Regression"]
+r2_scores = [r2_linear,r2_poly]
+
+plt.bar(models,r2_scores)
+
+plt.ylabel("R2 Score")
+plt.title("Linear vs Polynomial Regression")
+
+plt.ylim(0,1)
+
+plt.show()
