@@ -11,3 +11,10 @@ print(df.head())
 print(df.shape)
 print(df.info())
 print(df.describe())
+
+#Check Missing Values
+print(df.isnull().sum())
+
+#Correlation
+print(df.corr()["MedHouseVal"].sort_values(ascending=False))
+
